@@ -56,35 +56,35 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 14100}
+      Script: {instanceID: 11260}
     - Class: 114
-      Script: {instanceID: 14102}
+      Script: {instanceID: 11264}
     - Class: 114
-      Script: {instanceID: 14176}
+      Script: {instanceID: 11340}
     - Class: 114
-      Script: {instanceID: 14210}
+      Script: {instanceID: 11374}
     - Class: 114
-      Script: {instanceID: 14290}
+      Script: {instanceID: 11454}
     - Class: 114
-      Script: {instanceID: 14294}
+      Script: {instanceID: 11458}
     - Class: 114
-      Script: {instanceID: 14352}
+      Script: {instanceID: 11516}
     - Class: 114
-      Script: {instanceID: 14790}
+      Script: {instanceID: 11958}
     - Class: 114
-      Script: {instanceID: 14880}
+      Script: {instanceID: 12052}
     - Class: 114
-      Script: {instanceID: 15386}
+      Script: {instanceID: 12560}
     - Class: 114
-      Script: {instanceID: 15486}
+      Script: {instanceID: 12670}
     - Class: 114
-      Script: {instanceID: 15768}
+      Script: {instanceID: 12958}
     - Class: 114
-      Script: {instanceID: 15812}
+      Script: {instanceID: 13004}
     - Class: 114
-      Script: {instanceID: 15984}
+      Script: {instanceID: 13180}
     - Class: 114
-      Script: {instanceID: 16190}
+      Script: {instanceID: 13390}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -695,5 +695,5 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/Luis/Documents/GitHub/mii1-computacion-grafica/Trabajo Teorico-Practico/Space
+  playerPath: C:/Users/Luis/Documents/GitHub/mii1-computacion-grafica/Trabajo Teorico-Practico/exec/Space
     Shooter.exe
