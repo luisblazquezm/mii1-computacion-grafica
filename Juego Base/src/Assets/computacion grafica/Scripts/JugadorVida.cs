@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
+
 public class JugadorVida : MonoBehaviour
 {
     public float vida = 200;
@@ -27,6 +29,7 @@ public class JugadorVida : MonoBehaviour
     {
         rectTransform.sizeDelta = vector2Vida;
     }
+
     public void restarVida(float vida)
     {
         if (this.vida <= 0)
@@ -45,8 +48,19 @@ public class JugadorVida : MonoBehaviour
                 audioSource[0].Stop();
             audioSource[1].Play();
             anim.SetBool("morir", true);
+
             //activo la puntuacion final
             canvas.GetComponent<Canvas>().enabled = true;
+
+            Invoke("gameOverEscena", 5);
         }
+    }
+
+    //http://docs.unity3d.com/ScriptReference/Application.LoadLevel.html
+    //añadir la escena en File->Build Settings
+    void gameOverEscena()
+    {
+        Debug.Log ("Muero");
+        SceneManager.LoadScene("gameover");
     }
 }

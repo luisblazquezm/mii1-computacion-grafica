@@ -3,7 +3,11 @@ using System.Collections;
 public class JugadorMovimiento : MonoBehaviour
 {
     public float velocidad = 1;
-    protected Animator anim; protected JugadorVida jugadorVida;
+    private bool enSalto = false;
+    private int impulso = 5;
+    protected Animator anim; 
+    protected JugadorVida jugadorVida;
+
     // Use this for initialization
     void Start()
     {
@@ -20,6 +24,12 @@ public class JugadorMovimiento : MonoBehaviour
         {
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
+
+            if (Input.GetKey(KeyCode.Space) && enSalto == false)
+            {
+                salto();
+            }
+
             movimiento(v);
             traslacion(v);
             rotacion(h);
@@ -42,6 +52,16 @@ public class JugadorMovimiento : MonoBehaviour
     }
     void movimiento(float vertical)
     {
+        // Cuando se pulsa "Mayus Izquierdo" se cambia la velocidad del personaje
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift) && !enSalto)
+        {
+            velocidad = 10.0f;
+        }
+        else
+        {
+            velocidad = 1.0f;
+        }
+
         if (vertical != 0)
         {
             anim.SetBool("andando", true);
@@ -50,5 +70,19 @@ public class JugadorMovimiento : MonoBehaviour
         {
             anim.SetBool("andando", false);
         }
+    }
+
+    void salto()
+    {
+        enSalto = true;
+        anim.SetBool("andando", false);
+        GetComponent<Rigidbody>().AddForce(Vector2.up * impulso, ForceMode.Impulse);
+        jugadorVida.restarEnergia(20.0f);
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        anim.SetBool("andando", true);
+        enSalto = false;
     }
 }
